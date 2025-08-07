@@ -2,7 +2,7 @@ from flask import Flask, jsonify
 import requests
 from bs4 import BeautifulSoup
 
-app = Flask(atlasai)
+app = Flask(__name__)
 
 def scrape_site(url, selector="a", base_url=None, limit=5):
     try:
@@ -58,6 +58,6 @@ def get_all_sources():
 def index():
     return "Atlas IA – API de pesquisa de vistos e imigração (v1.3)"
 
-    if __name__ == "__main__":
+if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=5000)
 
